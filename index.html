@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find jobs · CareerFlow</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-[#0b0f1a]">
+<a href="#main" class="skip-link sr-only">Skip to content</a>
+
+<!-- Header -->
+<header class="bg-white border-b border-[#e7e9f0] sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-10">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+        <span class="w-8 h-8 rounded-lg brand-gradient flex items-center justify-center text-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-4-4M12 19h8"/></svg>
+        </span>
+        CareerFlow
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="nav-link active">Find jobs</a>
+        <a href="saved-jobs.html" class="nav-link">Saved jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="#" class="nav-link">Career resources</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <button class="w-9 h-9 rounded-full bg-[#f1f2f8] flex items-center justify-center" aria-label="Notifications">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg>
+      </button>
+      <a href="profile.html" class="flex items-center gap-2">
+        <span class="w-9 h-9 rounded-full bg-[#0b0f1a] text-white flex items-center justify-center text-xs font-semibold">JL</span>
+        <span class="hidden sm:block text-sm text-left">
+          <span class="block font-semibold leading-tight">Jordan Lee</span>
+          <span class="block text-[#16a34a] leading-tight text-xs">Actively looking</span>
+        </span>
+      </a>
+      <button data-nav-toggle class="md:hidden w-9 h-9 flex items-center justify-center" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav data-mobile-nav class="hidden md:hidden border-t border-[#e7e9f0] px-6 py-3 flex flex-col gap-3 text-sm">
+    <a href="index.html" class="font-semibold">Find jobs</a>
+    <a href="saved-jobs.html">Saved jobs</a>
+    <a href="applications.html">Applications</a>
+    <a href="#">Career resources</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="bg-[#f4f5fa] border-b border-[#e7e9f0]">
+    <div class="max-w-7xl mx-auto px-6 pt-12 pb-10">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+        <div>
+          <p class="text-xs font-semibold tracking-wide text-[#4338ea] mb-2">India graduate roles</p>
+          <h1 class="text-4xl font-extrabold tracking-tight mb-2">Fresh graduate roles in India.</h1>
+          <p class="text-[#585d76] max-w-xl">Entry-level opportunities across Bengaluru, Delhi, Hyderabad, Mumbai, and Pune for bachelor's degree holders.</p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <div class="text-right">
+            <p class="text-2xl font-bold text-[#4338ea]">82%</p>
+            <p class="text-sm text-[#585d76]">Profile strength</p>
+          </div>
+          <a href="profile.html" class="text-sm font-medium text-[#4338ea]">Add portfolio &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Search bar -->
+      <div class="mt-8 card p-2 flex flex-col md:flex-row gap-2 shadow-sm">
+        <div class="flex-1 flex items-center gap-3 px-4 py-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a8fa8" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <div class="flex-1">
+            <label for="role-search" class="block text-[10px] font-semibold tracking-wide text-[#8a8fa8]">Role or keyword</label>
+            <input id="role-search" data-role-search type="text" value="Graduate roles" class="w-full outline-none text-sm font-medium" />
+          </div>
+        </div>
+        <div class="hidden md:block w-px bg-[#e7e9f0] my-2"></div>
+        <div class="flex-1 flex items-center gap-3 px-4 py-3">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a8fa8" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div class="flex-1">
+            <label for="location-search" class="block text-[10px] font-semibold tracking-wide text-[#8a8fa8]">Location</label>
+            <input id="location-search" type="text" value="India · Major cities" class="w-full outline-none text-sm font-medium" />
+          </div>
+        </div>
+        <button data-search-btn class="btn-primary rounded-xl px-6 py-3 text-sm font-semibold flex items-center justify-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          Search jobs
+        </button>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="mt-6 grid sm:grid-cols-3 gap-4">
+        <div class="card p-5 flex items-center gap-4">
+          <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4338ea" stroke-width="2"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 21 12 17l-5.5 4L8 13.5 3 9l6.5-.5z"/></svg>
+          </span>
+          <div>
+            <p class="text-sm text-[#585d76]">New matches</p>
+            <p class="text-xl font-bold">128 <span class="text-[#16a34a] text-sm font-medium">+18 this week</span></p>
+          </div>
+        </div>
+        <div class="card p-5 flex items-center gap-4">
+          <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M5 3a2 2 0 00-2 2v16l9-5 9 5V5a2 2 0 00-2-2H5z"/></svg>
+          </span>
+          <div>
+            <p class="text-sm text-[#585d76]">Saved jobs</p>
+            <p class="text-xl font-bold">9 <span class="text-[#585d76] text-sm font-medium">2 close soon</span></p>
+          </div>
+        </div>
+        <div class="card p-5 flex items-center gap-4">
+          <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </span>
+          <div>
+            <p class="text-sm text-[#585d76]">Applications</p>
+            <p class="text-xl font-bold">5 <span class="text-[#16a34a] text-sm font-medium">1 interview</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listings -->
+  <section class="max-w-7xl mx-auto px-6 py-10 grid lg:grid-cols-[260px_1fr] gap-8">
+    <!-- Filters -->
+    <aside class="card p-5 h-fit" id="filters">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-semibold">Filters</h2>
+        <button data-clear-filters="#filters" class="text-sm text-[#4338ea] font-medium">Clear all</button>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-sm font-semibold mb-3">City</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" data-filter="city" value="bengaluru" checked /> Bengaluru</span>
+            <span class="text-[#8a8fa8]">48</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" data-filter="city" value="delhi" checked /> Delhi NCR</span>
+            <span class="text-[#8a8fa8]">31</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" data-filter="city" value="hyderabad" /> Hyderabad</span>
+            <span class="text-[#8a8fa8]">24</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" data-filter="city" value="mumbai" /> Mumbai</span>
+            <span class="text-[#8a8fa8]">18</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" data-filter="city" value="pune" /> Pune</span>
+            <span class="text-[#8a8fa8]">14</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-sm font-semibold mb-3">Job type</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" checked /> Full-time</span>
+            <span class="text-[#8a8fa8]">96</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" /> Internship</span>
+            <span class="text-[#8a8fa8]">21</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" /> Campus placement</span>
+            <span class="text-[#8a8fa8]">11</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-sm font-semibold mb-3">Experience level</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" checked /> Entry level</span>
+            <span class="text-[#8a8fa8]">64</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" checked /> Early career</span>
+            <span class="text-[#8a8fa8]">44</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" /> 0-2 years</span>
+            <span class="text-[#8a8fa8]">20</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <p class="text-sm font-semibold mb-3">Salary range</p>
+        <div class="space-y-2 text-sm">
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" checked /> ₹8L–₹12L</span>
+            <span class="text-[#8a8fa8]">38</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" /> ₹12L–₹18L</span>
+            <span class="text-[#8a8fa8]">27</span>
+          </label>
+          <label class="flex items-center justify-between cursor-pointer">
+            <span class="flex items-center gap-2"><input type="checkbox" /> ₹18L–₹25L</span>
+            <span class="text-[#8a8fa8]">15</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="btn-primary w-full rounded-xl py-2.5 text-sm font-semibold">Apply filters</button>
+    </aside>
+
+    <!-- Job list -->
+    <div>
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <h2 class="text-xl font-bold">Graduate roles in India</h2>
+          <p class="text-sm text-[#585d76]"><span data-results-count>128 results</span> · 18 new since your last visit</p>
+        </div>
+        <label class="text-sm text-[#585d76] flex items-center gap-2">
+          Sort:
+          <select class="border border-[#e7e9f0] rounded-lg px-2 py-1.5 text-sm font-medium text-[#0b0f1a]">
+            <option>Best match</option>
+            <option>Newest</option>
+            <option>Salary: high to low</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="space-y-4" data-job-list>
+
+        <!-- Job card -->
+        <article data-job data-title="graduate product designer" data-city="bengaluru" class="job-card card p-6 flex flex-col sm:flex-row sm:items-start gap-5">
+          <span class="avatar w-12 h-12 shrink-0" style="background:#4338ea">ZP</span>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <h3 class="font-semibold text-lg">Graduate Product Designer</h3>
+              <span class="tag bg-[#eef0fb] text-[#4338ea]">✦ Top match</span>
+            </div>
+            <p class="text-sm text-[#585d76] mb-2">ZenPay</p>
+            <div class="flex flex-wrap gap-4 text-sm text-[#585d76] mb-3">
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/></svg>Bengaluru · Hybrid</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>Full-time</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>0–2 years</span>
+              <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/></svg>₹12L–₹16L</span>
+            </div>
+            <p class="text-sm text-[#585d76] mb-3">Join a fast-moving fintech team to design onboarding, payments, and customer support flows for millions of users.</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="tag">Figma</span>
+              <span class="tag">Product thinking</span>
+              <span class="tag">Design systems</span>
+              <span class="text-xs text-[#8a8fa8]">· 2 hours ago</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-col items-stretch gap-2 sm:w-40 shrink-0">
+            <button data-save-toggle data-saved="true" class="btn-secondary bg-[#eef0fb] text-[#4338ea] rounded-lg px-4 py-2 text-sm font-medium flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v12l7-4 7 4V5a2 2 0 00-2-2H5z"/></svg> Saved
+            </button>
+            <a href="job-detail.html" class="btn-primary rounded-lg px-4 py-2 text-sm font-semibold flex items-center justify-center gap-1">Apply now ↗</a>
+          </div>
+        </article>
+
+        <!-- Job card -->
+        <article data-job data-title="junior ux designer" data-city="delhi" class="job-card card p-6 flex flex-col sm:flex-row sm:items-start gap-5">
+          <span class="avatar w-12 h-12 shrink-0" style="background:#16a34a">HC</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-lg">Junior UX Designer</h3>
+            <p class="text-sm text-[#585d76] mb-2">HealthConnect</p>
+            <div class="flex flex-wrap gap-4 text-sm text-[#585d76] mb-3">
+              <span>📍 Delhi NCR · Hybrid</span>
+              <span>💼 Full-time</span>
+              <span>📶 0–2 years</span>
+              <span>💳 ₹10L–₹14L</span>
+            </div>
+            <p class="text-sm text-[#585d76] mb-3">Improve appointment booking, teleconsultation, and patient record experiences for a growing health-tech platform.</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="tag">User research</span>
+              <span class="tag">Wireframing</span>
+              <span class="tag">Accessibility</span>
+              <span class="text-xs text-[#8a8fa8]">· Today</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-col items-stretch gap-2 sm:w-40 shrink-0">
+            <button data-save-toggle data-saved="false" class="btn-secondary rounded-lg px-4 py-2 text-sm font-medium flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v12l7-4 7 4V5a2 2 0 00-2-2H5z"/></svg> Save
+            </button>
+            <a href="job-detail.html" class="btn-secondary rounded-lg px-4 py-2 text-sm font-semibold flex items-center justify-center gap-1">View job ↗</a>
+          </div>
+        </article>
+
+        <!-- Job card -->
+        <article data-job data-title="associate product designer" data-city="hyderabad" class="job-card card p-6 flex flex-col sm:flex-row sm:items-start gap-5">
+          <span class="avatar w-12 h-12 shrink-0" style="background:#7c3aed">NS</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-lg">Associate Product Designer</h3>
+            <p class="text-sm text-[#585d76] mb-2">NovaStack</p>
+            <div class="flex flex-wrap gap-4 text-sm text-[#585d76] mb-3">
+              <span>📍 Hyderabad · Hybrid</span>
+              <span>💼 Full-time</span>
+              <span>📶 0–2 years</span>
+              <span>💳 ₹11L–₹15L</span>
+            </div>
+            <p class="text-sm text-[#585d76] mb-3">Help shape developer tools, dashboards, and onboarding flows for a cloud infrastructure platform.</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="tag">B2B SaaS</span>
+              <span class="tag">Prototyping</span>
+              <span class="tag">Design critique</span>
+              <span class="text-xs text-[#8a8fa8]">· 1 day ago</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-col items-stretch gap-2 sm:w-40 shrink-0">
+            <button data-save-toggle data-saved="false" class="btn-secondary rounded-lg px-4 py-2 text-sm font-medium flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v12l7-4 7 4V5a2 2 0 00-2-2H5z"/></svg> Save
+            </button>
+            <a href="job-detail.html" class="btn-secondary rounded-lg px-4 py-2 text-sm font-semibold flex items-center justify-center gap-1">View job ↗</a>
+          </div>
+        </article>
+
+        <!-- Job card -->
+        <article data-job data-title="graduate ux researcher" data-city="mumbai" class="job-card card p-6 flex flex-col sm:flex-row sm:items-start gap-5">
+          <span class="avatar w-12 h-12 shrink-0" style="background:#b45309">MK</span>
+          <div class="flex-1">
+            <h3 class="font-semibold text-lg">Graduate UX Researcher</h3>
+            <p class="text-sm text-[#585d76] mb-2">MetroKart</p>
+            <div class="flex flex-wrap gap-4 text-sm text-[#585d76] mb-3">
+              <span>📍 Mumbai · Hybrid</span>
+              <span>💼 Full-time</span>
+              <span>📶 0–2 years</span>
+              <span>💳 ₹9.5L–₹13.5L</span>
+            </div>
+            <p class="text-sm text-[#585d76] mb-3">Conduct interviews, usability testing, and synthesis to improve checkout, search, and delivery experiences.</p>
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="tag">User interviews</span>
+              <span class="tag">Usability testing</span>
+              <span class="tag">Research synthesis</span>
+              <span class="text-xs text-[#8a8fa8]">· 2 days ago</span>
+            </div>
+          </div>
+          <div class="flex sm:flex-col items-stretch gap-2 sm:w-40 shrink-0">
+            <button data-save-toggle data-saved="true" class="btn-secondary bg-[#eef0fb] text-[#4338ea] rounded-lg px-4 py-2 text-sm font-medium flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M5 3a2 2 0 00-2 2v12l7-4 7 4V5a2 2 0 00-2-2H5z"/></svg> Saved
+            </button>
+            <a href="job-detail.html" class="btn-secondary rounded-lg px-4 py-2 text-sm font-semibold flex items-center justify-center gap-1">View job ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-[#0b0f1a] text-white mt-10">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2 font-bold">
+      <span class="w-7 h-7 rounded-lg brand-gradient flex items-center justify-center text-white text-sm">C</span>
+      CareerFlow
+    </a>
+    <p class="text-sm text-[#9aa0c0]">© 2026 CareerFlow, Inc. · Privacy · Terms · Accessibility</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
