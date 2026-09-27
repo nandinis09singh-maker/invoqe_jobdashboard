@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerFlow - Career Resources</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f7f8fc;
+            color: #111827;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            height: 100px;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 78px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 45px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: #5536e8;
+            color: white;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 38px;
+            height: 100%;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #334155;
+            font-size: 17px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-links a.active {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 21px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #4935ee;
+        }
+
+        .profile {
+            margin-left: auto;
+            width: 43px;
+            height: 43px;
+            border-radius: 50%;
+            background: #111827;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* MAIN */
+        .container {
+            padding: 35px 79px;
+        }
+
+        .heading h1 {
+            font-size: 38px;
+            margin-bottom: 9px;
+            font-weight: 750;
+        }
+
+        .heading p {
+            font-size: 20px;
+            color: #52627a;
+        }
+
+        /* SEARCH */
+        .search-box {
+            margin-top: 30px;
+            background: white;
+            border: 1px solid #e1e5ed;
+            border-radius: 14px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            font-size: 20px;
+            margin-right: 12px;
+            color: #64748b;
+        }
+
+        .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* RESOURCE GRID */
+        .resources {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .resource-card {
+            background: white;
+            border: 1px solid #e1e5ed;
+            border-radius: 17px;
+            padding: 25px;
+            min-height: 230px;
+            transition: 0.2s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .resource-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: #eeeaff;
+            color: #5536e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .resource-card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .resource-card p {
+            color: #64748b;
+            line-height: 1.5;
+            font-size: 15px;
+            margin-bottom: 18px;
+        }
+
+        .resource-link {
+            text-decoration: none;
+            color: #5137ed;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* FEATURED SECTION */
+        .featured {
+            margin-top: 35px;
+        }
+
+        .featured h2 {
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+        .featured-box {
+            background: white;
+            border: 1px solid #e1e5ed;
+            border-radius: 17px;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .featured-content h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .featured-content p {
+            color: #64748b;
+            max-width: 700px;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: #5536e8;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            .navbar {
+                padding: 0 25px;
+            }
+
+            .container {
+                padding: 30px 25px;
+            }
+
+            .resources {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .brand {
+                display: none;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .resources {
+                grid-template-columns: 1fr;
+            }
+
+            .heading h1 {
+                font-size: 30px;
+            }
+
+            .featured-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo-section">
+            <div class="logo">›_</div>
+            <div class="brand">CareerFlow</div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Find jobs</a>
+            <a href="#">Saved jobs</a>
+            <a href="#">Applications</a>
+            <a href="#" class="active">Career resources</a>
+        </div>
+
+        <div class="profile">AM</div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <div class="heading">
+            <h1>Career Resources</h1>
+            <p>Tools and guides to help you build your career with confidence.</p>
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input
+                type="text"
+                placeholder="Search career resources..."
+                onkeyup="searchResources()"
+                id="searchInput"
+            >
+        </div>
+
+
+        <!-- RESOURCE CARDS -->
+        <section class="resources" id="resourceList">
+
+            <div class="resource-card">
+                <div class="resource-icon">📄</div>
+                <h2>Resume Builder</h2>
+                <p>
+                    Create a professional resume that highlights your skills,
+                    experience and achievements.
+                </p>
+                <a href="#" class="resource-link">Build your resume →</a>
+            </div>
+
+
+            <div class="resource-card">
+                <div class="resource-icon">💼</div>
+                <h2>Interview Preparation</h2>
+                <p>
+                    Practice common interview questions and learn how to
+                    confidently present yourself.
+                </p>
+                <a href="#" class="resource-link">Prepare for interviews →</a>
+            </div>
+
+
+            <div class="resource-card">
+                <div class="resource-icon">🎯</div>
+                <h2>Career Planning</h2>
+                <p>
+                    Explore career paths, set goals and create a plan for
+                    your professional growth.
+                </p>
+                <a href="#" class="resource-link">Plan your career →</a>
+            </div>
+
+
+            <div class="resource-card">
+                <div class="resource-icon">💻</div>
+                <h2>Technical Skills</h2>
+                <p>
+                    Find learning resources to improve programming,
+                    data, design and other technical skills.
+                </p>
+                <a href="#" class="resource-link">Improve your skills →</a>
+            </div>
+
+
+            <div class="resource-card">
+                <div class="resource-icon">🤝</div>
+                <h2>Networking</h2>
+                <p>
+                    Learn how to build meaningful professional connections
+                    and grow your network.
+                </p>
+                <a href="#" class="resource-link">Learn networking →</a>
+            </div>
+
+
+            <div class="resource-card">
+                <div class="resource-icon">💰</div>
+                <h2>Salary Guide</h2>
+                <p>
+                    Understand salary expectations and prepare for
+                    compensation discussions.
+                </p>
+                <a href="#" class="resource-link">Explore salary guide →</a>
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED -->
+        <section class="featured">
+
+            <h2>Featured Resource</h2>
+
+            <div class="featured-box">
+
+                <div class="featured-content">
+                    <h3>Complete Job Search Guide</h3>
+                    <p>
+                        Learn how to find relevant jobs, customize your resume,
+                        prepare for interviews and track your applications.
+                    </p>
+                </div>
+
+                <a href="#" class="btn">Read Guide</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SEARCH FUNCTION -->
+    <script>
+
+        function searchResources() {
+
+            let input =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase();
+
+            let cards =
+                document.querySelectorAll(".resource-card");
+
+            cards.forEach(function(card) {
+
+                let text = card.innerText.toLowerCase();
+
+                if (text.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+
+            });
+        }
+
+    </script>
+
+</body>
+</html>
