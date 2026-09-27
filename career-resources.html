@@ -53,6 +53,7 @@
             font-weight: 700;
         }
 
+        /* NAV LINKS */
         .nav-links {
             display: flex;
             gap: 38px;
@@ -70,6 +71,10 @@
             position: relative;
         }
 
+        .nav-links a:hover {
+            color: #5536e8;
+        }
+
         .nav-links a.active {
             color: #111827;
             font-weight: 600;
@@ -85,6 +90,7 @@
             background: #4935ee;
         }
 
+        /* PROFILE */
         .profile {
             margin-left: auto;
             width: 43px;
@@ -116,7 +122,7 @@
 
         /* SEARCH */
         .search-box {
-            margin-top: 30px;
+            margin-top: 32px;
             background: white;
             border: 1px solid #e1e5ed;
             border-radius: 14px;
@@ -126,9 +132,9 @@
         }
 
         .search-icon {
-            font-size: 20px;
-            margin-right: 12px;
+            font-size: 22px;
             color: #64748b;
+            margin-right: 12px;
         }
 
         .search-box input {
@@ -136,6 +142,7 @@
             border: none;
             outline: none;
             font-size: 16px;
+            color: #111827;
         }
 
         /* RESOURCE GRID */
@@ -151,13 +158,13 @@
             border: 1px solid #e1e5ed;
             border-radius: 17px;
             padding: 25px;
-            min-height: 230px;
-            transition: 0.2s;
+            min-height: 235px;
+            transition: 0.2s ease;
         }
 
         .resource-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
         }
 
         .resource-icon {
@@ -186,13 +193,17 @@
         }
 
         .resource-link {
-            text-decoration: none;
             color: #5137ed;
             font-weight: 600;
-            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        /* FEATURED SECTION */
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+
+        /* FEATURED */
         .featured {
             margin-top: 35px;
         }
@@ -232,6 +243,11 @@
             text-decoration: none;
             font-weight: 600;
             white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #432bc9;
         }
 
         /* RESPONSIVE */
@@ -292,13 +308,28 @@
         </div>
 
         <div class="nav-links">
-            <a href="#">Find jobs</a>
-            <a href="#">Saved jobs</a>
-            <a href="#">Applications</a>
-            <a href="#" class="active">Career resources</a>
+
+            <a href="index.html">
+                Find jobs
+            </a>
+
+            <a href="saved-jobs.html">
+                Saved jobs
+            </a>
+
+            <a href="applications.html">
+                Applications
+            </a>
+
+            <a href="career-resources.html" class="active">
+                Career resources
+            </a>
+
         </div>
 
-        <div class="profile">AM</div>
+        <div class="profile">
+            AM
+        </div>
 
     </nav>
 
@@ -308,109 +339,198 @@
 
         <div class="heading">
             <h1>Career Resources</h1>
-            <p>Tools and guides to help you build your career with confidence.</p>
+
+            <p>
+                Tools and guides to help you build your career with confidence.
+            </p>
         </div>
 
 
         <!-- SEARCH -->
         <div class="search-box">
+
             <span class="search-icon">⌕</span>
+
             <input
                 type="text"
+                id="searchInput"
                 placeholder="Search career resources..."
                 onkeyup="searchResources()"
-                id="searchInput"
             >
+
         </div>
 
 
         <!-- RESOURCE CARDS -->
         <section class="resources" id="resourceList">
 
+
+            <!-- RESUME -->
             <div class="resource-card">
-                <div class="resource-icon">📄</div>
-                <h2>Resume Builder</h2>
+
+                <div class="resource-icon">
+                    📄
+                </div>
+
+                <h2>
+                    Resume Builder
+                </h2>
+
                 <p>
-                    Create a professional resume that highlights your skills,
-                    experience and achievements.
+                    Create a professional resume that highlights your
+                    skills, experience and achievements.
                 </p>
-                <a href="#" class="resource-link">Build your resume →</a>
+
+                <a href="#" class="resource-link">
+                    Build your resume →
+                </a>
+
             </div>
 
 
+            <!-- INTERVIEW -->
             <div class="resource-card">
-                <div class="resource-icon">💼</div>
-                <h2>Interview Preparation</h2>
+
+                <div class="resource-icon">
+                    💼
+                </div>
+
+                <h2>
+                    Interview Preparation
+                </h2>
+
                 <p>
                     Practice common interview questions and learn how to
                     confidently present yourself.
                 </p>
-                <a href="#" class="resource-link">Prepare for interviews →</a>
+
+                <a href="#" class="resource-link">
+                    Prepare for interviews →
+                </a>
+
             </div>
 
 
+            <!-- CAREER PLANNING -->
             <div class="resource-card">
-                <div class="resource-icon">🎯</div>
-                <h2>Career Planning</h2>
+
+                <div class="resource-icon">
+                    🎯
+                </div>
+
+                <h2>
+                    Career Planning
+                </h2>
+
                 <p>
-                    Explore career paths, set goals and create a plan for
-                    your professional growth.
+                    Explore career paths, set goals and create a plan
+                    for your professional growth.
                 </p>
-                <a href="#" class="resource-link">Plan your career →</a>
+
+                <a href="#" class="resource-link">
+                    Plan your career →
+                </a>
+
             </div>
 
 
+            <!-- TECHNICAL SKILLS -->
             <div class="resource-card">
-                <div class="resource-icon">💻</div>
-                <h2>Technical Skills</h2>
+
+                <div class="resource-icon">
+                    💻
+                </div>
+
+                <h2>
+                    Technical Skills
+                </h2>
+
                 <p>
                     Find learning resources to improve programming,
                     data, design and other technical skills.
                 </p>
-                <a href="#" class="resource-link">Improve your skills →</a>
+
+                <a href="#" class="resource-link">
+                    Improve your skills →
+                </a>
+
             </div>
 
 
+            <!-- NETWORKING -->
             <div class="resource-card">
-                <div class="resource-icon">🤝</div>
-                <h2>Networking</h2>
+
+                <div class="resource-icon">
+                    🤝
+                </div>
+
+                <h2>
+                    Networking
+                </h2>
+
                 <p>
                     Learn how to build meaningful professional connections
-                    and grow your network.
+                    and grow your professional network.
                 </p>
-                <a href="#" class="resource-link">Learn networking →</a>
+
+                <a href="#" class="resource-link">
+                    Learn networking →
+                </a>
+
             </div>
 
 
+            <!-- SALARY -->
             <div class="resource-card">
-                <div class="resource-icon">💰</div>
-                <h2>Salary Guide</h2>
+
+                <div class="resource-icon">
+                    💰
+                </div>
+
+                <h2>
+                    Salary Guide
+                </h2>
+
                 <p>
                     Understand salary expectations and prepare for
                     compensation discussions.
                 </p>
-                <a href="#" class="resource-link">Explore salary guide →</a>
+
+                <a href="#" class="resource-link">
+                    Explore salary guide →
+                </a>
+
             </div>
 
         </section>
 
 
-        <!-- FEATURED -->
+        <!-- FEATURED RESOURCE -->
         <section class="featured">
 
-            <h2>Featured Resource</h2>
+            <h2>
+                Featured Resource
+            </h2>
 
             <div class="featured-box">
 
                 <div class="featured-content">
-                    <h3>Complete Job Search Guide</h3>
+
+                    <h3>
+                        Complete Job Search Guide
+                    </h3>
+
                     <p>
-                        Learn how to find relevant jobs, customize your resume,
-                        prepare for interviews and track your applications.
+                        Learn how to find relevant jobs, customize your
+                        resume, prepare for interviews and track your
+                        applications.
                     </p>
+
                 </div>
 
-                <a href="#" class="btn">Read Guide</a>
+                <a href="#" class="btn">
+                    Read Guide
+                </a>
 
             </div>
 
@@ -419,33 +539,42 @@
     </main>
 
 
-    <!-- SEARCH FUNCTION -->
+    <!-- SEARCH JAVASCRIPT -->
     <script>
 
         function searchResources() {
 
-            let input =
-                document.getElementById("searchInput")
+            const input =
+                document
+                .getElementById("searchInput")
                 .value
                 .toLowerCase();
 
-            let cards =
+            const cards =
                 document.querySelectorAll(".resource-card");
 
             cards.forEach(function(card) {
 
-                let text = card.innerText.toLowerCase();
+                const text =
+                    card.innerText.toLowerCase();
 
                 if (text.includes(input)) {
+
                     card.style.display = "block";
+
                 } else {
+
                     card.style.display = "none";
+
                 }
 
             });
+
         }
 
     </script>
 
 </body>
 </html>
+           
+     
