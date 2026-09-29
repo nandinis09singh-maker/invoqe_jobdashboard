@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerFlow - Applications</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -243,6 +246,12 @@
             background: #ffe2e2;
         }
 
+        /* WORDMARK BANNER */
+        #wordmark {
+            height: 220px;
+            margin-top: 40px;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 900px) {
             .navbar {
@@ -286,6 +295,10 @@
             .status {
                 font-size: 12px;
                 padding: 6px 9px;
+            }
+
+            #wordmark {
+                height: 160px;
             }
         }
     </style>
@@ -448,6 +461,19 @@
         </section>
 
     </main>
+
+
+    <!-- WORDMARK BANNER -->
+    <div id="wordmark" aria-hidden="true"></div>
+
+    <script src="js/vector-wordmark.js"></script>
+    <script>
+        VectorWordmark(document.getElementById("wordmark"), {
+            text: "CAREERFLOW",
+            fontSize: 120,
+            labels: false
+        });
+    </script>
 
 </body>
 </html>
