@@ -1,580 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerFlow - Career Resources</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background: #f7f8fc;
-            color: #111827;
-        }
-
-        /* NAVBAR */
-        .navbar {
-            height: 100px;
-            background: white;
-            border-bottom: 1px solid #e5e7eb;
-            display: flex;
-            align-items: center;
-            padding: 0 78px;
-        }
-
-        .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-right: 45px;
-        }
-
-        .logo {
-            width: 40px;
-            height: 40px;
-            background: #5536e8;
-            color: white;
-            border-radius: 11px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .brand {
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        /* NAV LINKS */
-        .nav-links {
-            display: flex;
-            gap: 38px;
-            height: 100%;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #334155;
-            font-size: 17px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #5536e8;
-        }
-
-        .nav-links a.active {
-            color: #111827;
-            font-weight: 600;
-        }
-
-        .nav-links a.active::after {
-            content: "";
-            position: absolute;
-            bottom: 21px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #4935ee;
-        }
-
-        /* PROFILE */
-        .profile {
-            margin-left: auto;
-            width: 43px;
-            height: 43px;
-            border-radius: 50%;
-            background: #111827;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-
-        /* MAIN */
-        .container {
-            padding: 35px 79px;
-        }
-
-        .heading h1 {
-            font-size: 38px;
-            margin-bottom: 9px;
-            font-weight: 750;
-        }
-
-        .heading p {
-            font-size: 20px;
-            color: #52627a;
-        }
-
-        /* SEARCH */
-        .search-box {
-            margin-top: 32px;
-            background: white;
-            border: 1px solid #e1e5ed;
-            border-radius: 14px;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-icon {
-            font-size: 22px;
-            color: #64748b;
-            margin-right: 12px;
-        }
-
-        .search-box input {
-            width: 100%;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            color: #111827;
-        }
-
-        /* RESOURCE GRID */
-        .resources {
-            margin-top: 30px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .resource-card {
-            background: white;
-            border: 1px solid #e1e5ed;
-            border-radius: 17px;
-            padding: 25px;
-            min-height: 235px;
-            transition: 0.2s ease;
-        }
-
-        .resource-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
-        }
-
-        .resource-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: #eeeaff;
-            color: #5536e8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-            margin-bottom: 18px;
-        }
-
-        .resource-card h2 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .resource-card p {
-            color: #64748b;
-            line-height: 1.5;
-            font-size: 15px;
-            margin-bottom: 18px;
-        }
-
-        .resource-link {
-            color: #5137ed;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .resource-link:hover {
-            text-decoration: underline;
-        }
-
-        /* FEATURED */
-        .featured {
-            margin-top: 35px;
-        }
-
-        .featured h2 {
-            font-size: 25px;
-            margin-bottom: 18px;
-        }
-
-        .featured-box {
-            background: white;
-            border: 1px solid #e1e5ed;
-            border-radius: 17px;
-            padding: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .featured-content h3 {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
-
-        .featured-content p {
-            color: #64748b;
-            max-width: 700px;
-            line-height: 1.5;
-        }
-
-        .btn {
-            background: #5536e8;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 9px;
-            text-decoration: none;
-            font-weight: 600;
-            white-space: nowrap;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: #432bc9;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-
-            .navbar {
-                padding: 0 25px;
-            }
-
-            .container {
-                padding: 30px 25px;
-            }
-
-            .resources {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .nav-links {
-                gap: 15px;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            .brand {
-                display: none;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .resources {
-                grid-template-columns: 1fr;
-            }
-
-            .heading h1 {
-                font-size: 30px;
-            }
-
-            .featured-box {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Career resources · CareerFlow</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 </head>
+<body class="text-[#0b0f1a]">
+<a href="#main" class="skip-link sr-only">Skip to content</a>
 
-<body>
+<!-- Header -->
+<header class="bg-white border-b border-[#e7e9f0] sticky top-0 z-40">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-10">
+      <a href="index.html" class="flex items-center gap-2 font-bold text-lg">
+        <span class="w-8 h-8 rounded-lg brand-gradient flex items-center justify-center text-white">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-4-4M12 19h8"/></svg>
+        </span>
+        CareerFlow
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="nav-link">Find jobs</a>
+        <a href="saved-jobs.html" class="nav-link">Saved jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="career-resources.html" class="nav-link active">Career resources</a>
+      </nav>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="profile.html" class="flex items-center gap-2">
+        <span class="w-9 h-9 rounded-full bg-[#0b0f1a] text-white flex items-center justify-center text-xs font-semibold">AM</span>
+        <span class="hidden sm:block text-sm text-left">
+          <span class="block font-semibold leading-tight">Aarav Mehta</span>
+          <span class="block text-[#16a34a] leading-tight text-xs">Actively looking</span>
+        </span>
+      </a>
+      <button data-nav-toggle class="md:hidden w-9 h-9 flex items-center justify-center" aria-label="Menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav data-mobile-nav class="hidden md:hidden border-t border-[#e7e9f0] px-6 py-3 flex flex-col gap-3 text-sm">
+    <a href="index.html">Find jobs</a>
+    <a href="saved-jobs.html">Saved jobs</a>
+    <a href="applications.html">Applications</a>
+    <a href="career-resources.html" class="font-semibold">Career resources</a>
+  </nav>
+</header>
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
+<main id="main" class="pb-10">
 
-        <div class="logo-section">
-            <div class="logo">›_</div>
-            <div class="brand">CareerFlow</div>
+  <!-- Hero -->
+  <section class="bg-[#f4f5fa] border-b border-[#e7e9f0]">
+    <div class="max-w-7xl mx-auto px-6 pt-12 pb-10">
+      <p class="text-xs font-semibold tracking-wide text-[#4338ea] mb-2">CAREER RESOURCES</p>
+      <h1 class="text-4xl font-extrabold tracking-tight mb-2">Tools to help you land your first role.</h1>
+      <p class="text-[#585d76] max-w-2xl">Guides, templates and checklists for fresh graduates in India, from your first resume to your first offer letter.</p>
+
+      <div class="mt-8 grid sm:grid-cols-3 gap-4">
+        <a href="resume.html" class="card p-5 flex items-center gap-4 hover:shadow-md transition">
+          <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg">📄</span>
+          <div>
+            <p class="font-semibold">Build your resume</p>
+            <p class="text-sm text-[#585d76]">Use our resume builder</p>
+          </div>
+        </a>
+        <a href="profile.html" class="card p-5 flex items-center gap-4 hover:shadow-md transition">
+          <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center text-lg">👤</span>
+          <div>
+            <p class="font-semibold">Improve your profile</p>
+            <p class="text-sm text-[#585d76]">Get to 100% strength</p>
+          </div>
+        </a>
+        <a href="index.html" class="card p-5 flex items-center gap-4 hover:shadow-md transition">
+          <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center text-lg">🔍</span>
+          <div>
+            <p class="font-semibold">Find graduate jobs</p>
+            <p class="text-sm text-[#585d76]">Browse open roles</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resources -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <h2 class="text-xl font-bold">Guides &amp; templates</h2>
+      <div class="flex flex-wrap gap-2 text-sm" id="chips">
+        <button data-cat="all" class="chip rounded-full px-4 py-1.5 font-medium bg-[#4338ea] text-white">All</button>
+        <button data-cat="resume" class="chip rounded-full px-4 py-1.5 font-medium bg-white border border-[#e7e9f0]">Resume</button>
+        <button data-cat="interview" class="chip rounded-full px-4 py-1.5 font-medium bg-white border border-[#e7e9f0]">Interviews</button>
+        <button data-cat="skills" class="chip rounded-full px-4 py-1.5 font-medium bg-white border border-[#e7e9f0]">Skills</button>
+        <button data-cat="offer" class="chip rounded-full px-4 py-1.5 font-medium bg-white border border-[#e7e9f0]">Offers</button>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5" id="resource-grid">
+
+      <article data-cat="resume" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">📄</span>
+        <h3 class="font-semibold text-lg mb-1">Fresher resume template</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">A clean one-page layout for graduates with projects, internships and coursework instead of long work history.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Resume</span>
+          <a href="resume.html" class="text-sm font-semibold text-[#4338ea]">Use template →</a>
         </div>
+      </article>
 
-        <div class="nav-links">
-
-            <a href="index.html">
-                Find jobs
-            </a>
-
-            <a href="saved-jobs.html">
-                Saved jobs
-            </a>
-
-            <a href="applications.html">
-                Applications
-            </a>
-
-            <a href="career-resources.html" class="active">
-                Career resources
-            </a>
-
+      <article data-cat="resume" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">✍️</span>
+        <h3 class="font-semibold text-lg mb-1">Writing strong project bullets</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">Turn class projects into achievements: what you built, the tools you used, and the result.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Resume</span>
+          <span class="text-xs text-[#8a8fa8]">5 min read</span>
         </div>
+      </article>
 
-        <div class="profile">
-            AM
+      <article data-cat="interview" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center text-lg mb-4">🎤</span>
+        <h3 class="font-semibold text-lg mb-1">Common interview questions</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">Practice answers for "Tell me about yourself", strengths, weaknesses and situational questions.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Interviews</span>
+          <span class="text-xs text-[#8a8fa8]">8 min read</span>
         </div>
+      </article>
 
-    </nav>
-
-
-    <!-- MAIN CONTENT -->
-    <main class="container">
-
-        <div class="heading">
-            <h1>Career Resources</h1>
-
-            <p>
-                Tools and guides to help you build your career with confidence.
-            </p>
+      <article data-cat="interview" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center text-lg mb-4">🎥</span>
+        <h3 class="font-semibold text-lg mb-1">Video interview checklist</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">Camera, lighting, internet and background: everything to check 30 minutes before a remote interview.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Interviews</span>
+          <span class="text-xs text-[#8a8fa8]">3 min read</span>
         </div>
+      </article>
 
-
-        <!-- SEARCH -->
-        <div class="search-box">
-
-            <span class="search-icon">⌕</span>
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search career resources..."
-                onkeyup="searchResources()"
-            >
-
+      <article data-cat="skills" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center text-lg mb-4">💡</span>
+        <h3 class="font-semibold text-lg mb-1">Skills employers look for</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">Communication, problem solving and teamwork, and how to show each one with real examples.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Skills</span>
+          <span class="text-xs text-[#8a8fa8]">6 min read</span>
         </div>
-
-
-        <!-- RESOURCE CARDS -->
-        <section class="resources" id="resourceList">
-
-
-            <!-- RESUME -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    📄
-                </div>
-
-                <h2>
-                    Resume Builder
-                </h2>
-
-                <p>
-                    Create a professional resume that highlights your
-                    skills, experience and achievements.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Build your resume →
-                </a>
-
-            </div>
-
-
-            <!-- INTERVIEW -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    💼
-                </div>
-
-                <h2>
-                    Interview Preparation
-                </h2>
-
-                <p>
-                    Practice common interview questions and learn how to
-                    confidently present yourself.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Prepare for interviews →
-                </a>
-
-            </div>
-
-
-            <!-- CAREER PLANNING -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    🎯
-                </div>
-
-                <h2>
-                    Career Planning
-                </h2>
-
-                <p>
-                    Explore career paths, set goals and create a plan
-                    for your professional growth.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Plan your career →
-                </a>
-
-            </div>
-
-
-            <!-- TECHNICAL SKILLS -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    💻
-                </div>
-
-                <h2>
-                    Technical Skills
-                </h2>
-
-                <p>
-                    Find learning resources to improve programming,
-                    data, design and other technical skills.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Improve your skills →
-                </a>
-
-            </div>
-
-
-            <!-- NETWORKING -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    🤝
-                </div>
-
-                <h2>
-                    Networking
-                </h2>
-
-                <p>
-                    Learn how to build meaningful professional connections
-                    and grow your professional network.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Learn networking →
-                </a>
-
-            </div>
-
-
-            <!-- SALARY -->
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    💰
-                </div>
-
-                <h2>
-                    Salary Guide
-                </h2>
-
-                <p>
-                    Understand salary expectations and prepare for
-                    compensation discussions.
-                </p>
-
-                <a href="#" class="resource-link">
-                    Explore salary guide →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- FEATURED RESOURCE -->
-        <section class="featured">
-
-            <h2>
-                Featured Resource
-            </h2>
-
-            <div class="featured-box">
-
-                <div class="featured-content">
-
-                    <h3>
-                        Complete Job Search Guide
-                    </h3>
-
-                    <p>
-                        Learn how to find relevant jobs, customize your
-                        resume, prepare for interviews and track your
-                        applications.
-                    </p>
-
-                </div>
-
-                <a href="#" class="btn">
-                    Read Guide
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- SEARCH JAVASCRIPT -->
-    <script>
-
-        function searchResources() {
-
-            const input =
-                document
-                .getElementById("searchInput")
-                .value
-                .toLowerCase();
-
-            const cards =
-                document.querySelectorAll(".resource-card");
-
-            cards.forEach(function(card) {
-
-                const text =
-                    card.innerText.toLowerCase();
-
-                if (text.includes(input)) {
-
-                    card.style.display = "block";
-
-                } else {
-
-                    card.style.display = "none";
-
-                }
-
-            });
-
-        }
-
-    </script>
-
+      </article>
+
+      <article data-cat="skills" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center text-lg mb-4">🧭</span>
+        <h3 class="font-semibold text-lg mb-1">Build a portfolio</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">Pick 3 projects, write short case studies and publish them, whether you're in design, code or marketing.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Skills</span>
+          <a href="profile.html" class="text-sm font-semibold text-[#4338ea]">Add portfolio →</a>
+        </div>
+      </article>
+
+      <article data-cat="offer" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#fff3e4] flex items-center justify-center text-lg mb-4">💰</span>
+        <h3 class="font-semibold text-lg mb-1">Understanding your offer letter</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">CTC vs in-hand salary, variable pay, joining bonus and notice period, explained in plain language.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Offers</span>
+          <span class="text-xs text-[#8a8fa8]">7 min read</span>
+        </div>
+      </article>
+
+      <article data-cat="offer" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#fff3e4] flex items-center justify-center text-lg mb-4">🤝</span>
+        <h3 class="font-semibold text-lg mb-1">Negotiating your first salary</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">How to research the market, ask politely and know what is realistic for an entry-level role.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Offers</span>
+          <span class="text-xs text-[#8a8fa8]">6 min read</span>
+        </div>
+      </article>
+
+      <article data-cat="resume" class="card p-6 flex flex-col">
+        <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">✉️</span>
+        <h3 class="font-semibold text-lg mb-1">Cover letter starter</h3>
+        <p class="text-sm text-[#585d76] mb-4 flex-1">A short, fill-in-the-blanks cover letter you can adapt in five minutes for each application.</p>
+        <div class="flex items-center justify-between">
+          <span class="tag">Resume</span>
+          <span class="text-xs text-[#8a8fa8]">4 min read</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Checklist -->
+  <section class="max-w-7xl mx-auto px-6 pb-6">
+    <div class="rounded-2xl p-8 text-white" style="background:linear-gradient(160deg,#0b0f1a,#181c30)">
+      <p class="text-xs font-semibold tracking-wide text-[#8be8b0] mb-2">YOUR JOB-READY CHECKLIST</p>
+      <h2 class="text-2xl font-bold mb-5">Tick these off before you apply.</h2>
+      <div class="grid sm:grid-cols-2 gap-3 text-sm">
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> Resume is one page and proofread</label>
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> Profile strength above 80%</label>
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> LinkedIn matches your resume</label>
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> 3 projects ready to discuss</label>
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> Practised 5 common interview answers</label>
+        <label class="flex items-center gap-3 bg-white/5 rounded-xl p-4 cursor-pointer"><input type="checkbox" /> Preferred cities and salary range decided</label>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Wordmark banner -->
+<div id="wordmark" style="height:220px" aria-hidden="true"></div>
+
+<footer class="bg-[#0b0f1a] text-white">
+  <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <a href="index.html" class="flex items-center gap-2 font-bold">
+      <span class="w-7 h-7 rounded-lg brand-gradient flex items-center justify-center text-white text-sm">C</span>
+      CareerFlow
+    </a>
+    <p class="text-sm text-[#9aa0c0]">© 2026 CareerFlow, Inc. · Privacy · Terms · Accessibility</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/vector-wordmark.js"></script>
+<script>
+  // Wordmark banner
+  VectorWordmark(document.getElementById("wordmark"), {
+    text: "CAREERFLOW",
+    fontSize: 120,
+    labels: false
+  });
+
+  // Category filter chips
+  var chips = document.querySelectorAll(".chip");
+  var cards = document.querySelectorAll("#resource-grid article");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      var cat = chip.getAttribute("data-cat");
+      chips.forEach(function (c) {
+        c.classList.remove("bg-[#4338ea]", "text-white");
+        c.classList.add("bg-white", "border", "border-[#e7e9f0]");
+      });
+      chip.classList.add("bg-[#4338ea]", "text-white");
+      chip.classList.remove("bg-white");
+      cards.forEach(function (card) {
+        card.style.display =
+          cat === "all" || card.getAttribute("data-cat") === cat ? "" : "none";
+      });
+    });
+  });
+</script>
 </body>
 </html>
-           
-     
