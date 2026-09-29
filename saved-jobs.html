@@ -1,11 +1,14 @@
 
-     <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Saved Jobs · CareerFlow</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
 
   <style>
     /* =========================
@@ -411,6 +414,16 @@
     }
 
     /* =========================
+       WORDMARK BANNER
+    ========================= */
+
+    #wordmark {
+      width: 100%;
+      height: 220px;
+      flex-shrink: 0;
+    }
+
+    /* =========================
        FOOTER
     ========================= */
 
@@ -532,6 +545,10 @@
 
       .apply-button {
         width: 100%;
+      }
+
+      #wordmark {
+        height: 160px;
       }
 
       footer {
@@ -831,6 +848,14 @@
 
 
   <!-- =====================================
+       WORDMARK BANNER
+  ====================================== -->
+
+  <div id="wordmark" aria-hidden="true"></div>
+
+
+
+  <!-- =====================================
        FOOTER
   ====================================== -->
 
@@ -865,7 +890,18 @@
        JAVASCRIPT
   ====================================== -->
 
+  <script src="js/vector-wordmark.js"></script>
+
   <script>
+
+    // Wordmark banner
+
+    VectorWordmark(document.getElementById("wordmark"), {
+      text: "CAREERFLOW",
+      fontSize: 120,
+      labels: false
+    });
+
 
     // Apply buttons
 
