@@ -8,6 +8,16 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+<style>
+  .guide-body h4 { font-weight: 700; color: #0b0f1a; font-size: 15px; margin: 18px 0 6px; }
+  .guide-body p { margin-bottom: 10px; }
+  .guide-body ul { list-style: disc; padding-left: 20px; margin-bottom: 10px; }
+  .guide-body ol { list-style: decimal; padding-left: 20px; margin-bottom: 10px; }
+  .guide-body li { margin-bottom: 6px; }
+  .guide-body .box { background: #f4f5fa; border-radius: 12px; padding: 14px 16px; margin: 10px 0; color: #0b0f1a; }
+  article[data-guide] { cursor: pointer; transition: box-shadow .2s, transform .2s; }
+  article[data-guide]:hover { box-shadow: 0 10px 25px rgba(20,25,45,.08); transform: translateY(-2px); }
+</style>
 </head>
 <body class="text-[#0b0f1a]">
 <a href="#main" class="skip-link sr-only">Skip to content</a>
@@ -100,7 +110,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5" id="resource-grid">
 
-      <article data-cat="resume" class="card p-6 flex flex-col">
+      <article data-cat="resume" data-guide="resume-template" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">📄</span>
         <h3 class="font-semibold text-lg mb-1">Fresher resume template</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">A clean one-page layout for graduates with projects, internships and coursework instead of long work history.</p>
@@ -110,7 +120,7 @@
         </div>
       </article>
 
-      <article data-cat="resume" class="card p-6 flex flex-col">
+      <article data-cat="resume" data-guide="project-bullets" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">✍️</span>
         <h3 class="font-semibold text-lg mb-1">Writing strong project bullets</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">Turn class projects into achievements: what you built, the tools you used, and the result.</p>
@@ -120,7 +130,7 @@
         </div>
       </article>
 
-      <article data-cat="interview" class="card p-6 flex flex-col">
+      <article data-cat="interview" data-guide="interview-questions" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center text-lg mb-4">🎤</span>
         <h3 class="font-semibold text-lg mb-1">Common interview questions</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">Practice answers for "Tell me about yourself", strengths, weaknesses and situational questions.</p>
@@ -130,7 +140,7 @@
         </div>
       </article>
 
-      <article data-cat="interview" class="card p-6 flex flex-col">
+      <article data-cat="interview" data-guide="video-checklist" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#f2ecff] flex items-center justify-center text-lg mb-4">🎥</span>
         <h3 class="font-semibold text-lg mb-1">Video interview checklist</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">Camera, lighting, internet and background: everything to check 30 minutes before a remote interview.</p>
@@ -140,7 +150,7 @@
         </div>
       </article>
 
-      <article data-cat="skills" class="card p-6 flex flex-col">
+      <article data-cat="skills" data-guide="skills-employers" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center text-lg mb-4">💡</span>
         <h3 class="font-semibold text-lg mb-1">Skills employers look for</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">Communication, problem solving and teamwork, and how to show each one with real examples.</p>
@@ -150,7 +160,7 @@
         </div>
       </article>
 
-      <article data-cat="skills" class="card p-6 flex flex-col">
+      <article data-cat="skills" data-guide="build-portfolio" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#e6f7ee] flex items-center justify-center text-lg mb-4">🧭</span>
         <h3 class="font-semibold text-lg mb-1">Build a portfolio</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">Pick 3 projects, write short case studies and publish them, whether you're in design, code or marketing.</p>
@@ -160,7 +170,7 @@
         </div>
       </article>
 
-      <article data-cat="offer" class="card p-6 flex flex-col">
+      <article data-cat="offer" data-guide="offer-letter" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#fff3e4] flex items-center justify-center text-lg mb-4">💰</span>
         <h3 class="font-semibold text-lg mb-1">Understanding your offer letter</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">CTC vs in-hand salary, variable pay, joining bonus and notice period, explained in plain language.</p>
@@ -170,7 +180,7 @@
         </div>
       </article>
 
-      <article data-cat="offer" class="card p-6 flex flex-col">
+      <article data-cat="offer" data-guide="negotiate-salary" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#fff3e4] flex items-center justify-center text-lg mb-4">🤝</span>
         <h3 class="font-semibold text-lg mb-1">Negotiating your first salary</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">How to research the market, ask politely and know what is realistic for an entry-level role.</p>
@@ -180,7 +190,7 @@
         </div>
       </article>
 
-      <article data-cat="resume" class="card p-6 flex flex-col">
+      <article data-cat="resume" data-guide="cover-letter" tabindex="0" role="button" class="card p-6 flex flex-col">
         <span class="w-10 h-10 rounded-xl bg-[#eef0fb] flex items-center justify-center text-lg mb-4">✉️</span>
         <h3 class="font-semibold text-lg mb-1">Cover letter starter</h3>
         <p class="text-sm text-[#585d76] mb-4 flex-1">A short, fill-in-the-blanks cover letter you can adapt in five minutes for each application.</p>
@@ -211,6 +221,22 @@
 
 </main>
 
+<!-- Guide popup -->
+<div id="guide-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="guide-title">
+  <div data-close class="absolute inset-0 bg-black/60"></div>
+  <div class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-8">
+    <button data-close type="button" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#f1f2f8] flex items-center justify-center text-lg">✕</button>
+    <span id="guide-tag" class="tag mb-3 inline-block"></span>
+    <h2 id="guide-title" class="text-2xl font-extrabold mb-1 pr-10"></h2>
+    <p id="guide-meta" class="text-sm text-[#8a8fa8] mb-5"></p>
+    <div id="guide-body" class="guide-body text-[#585d76] text-sm leading-relaxed"></div>
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a id="guide-cta" href="#" class="btn-primary rounded-lg px-5 py-2.5 text-sm font-semibold hidden"></a>
+      <button data-close type="button" class="btn-secondary rounded-lg px-5 py-2.5 text-sm font-semibold">Close</button>
+    </div>
+  </div>
+</div>
+
 <!-- Wordmark banner -->
 <div id="wordmark" style="height:220px" aria-hidden="true"></div>
 
@@ -227,16 +253,316 @@
 <script src="js/main.js"></script>
 <script src="js/vector-wordmark.js"></script>
 <script>
-  // Wordmark banner
-  VectorWordmark(document.getElementById("wordmark"), {
-    text: "CAREERFLOW",
-    fontSize: 120,
-    labels: false
+  // ---------- Wordmark banner ----------
+  if (window.VectorWordmark) {
+    VectorWordmark(document.getElementById("wordmark"), {
+      text: "CAREERFLOW",
+      fontSize: 120,
+      labels: false
+    });
+  }
+
+  // ---------- Guide content ----------
+  var guides = {
+    "resume-template": {
+      title: "Fresher resume template",
+      tag: "Resume", time: "4 min read",
+      cta: { text: "Open resume builder →", href: "resume.html" },
+      body: `
+        <p>As a fresher, your resume should show potential: what you have learned, built and practised. Keep it to <b>one page</b>.</p>
+        <h4>Section order that works</h4>
+        <ol>
+          <li><b>Header:</b> name, phone, professional email, city, LinkedIn/GitHub/portfolio link.</li>
+          <li><b>Summary (2 lines):</b> your degree, your strongest skill and the role you want.</li>
+          <li><b>Education:</b> degree, college, year, CGPA or percentage.</li>
+          <li><b>Projects:</b> 2 to 3 projects with tools and results.</li>
+          <li><b>Internships / training:</b> even short ones count.</li>
+          <li><b>Skills:</b> tools and technologies grouped by type.</li>
+          <li><b>Achievements:</b> hackathons, certifications, leadership roles.</li>
+        </ol>
+        <h4>Formatting rules</h4>
+        <ul>
+          <li>Use a simple font (Calibri, Arial or Inter) at 10 to 11 pt.</li>
+          <li>No photo, no colourful graphics, no tables that break in job portals.</li>
+          <li>Save as PDF named <b>Firstname_Lastname_Resume.pdf</b>.</li>
+        </ul>
+        <div class="box"><b>Example summary:</b> B.Tech Computer Science graduate skilled in React and Python, with 3 completed projects and a 2-month internship. Looking for a frontend developer role.</div>`
+    },
+
+    "project-bullets": {
+      title: "Writing strong project bullets",
+      tag: "Resume", time: "5 min read",
+      body: `
+        <p>Recruiters spend seconds on each resume. Good bullets show <b>what you did, how, and what happened</b>.</p>
+        <h4>The formula</h4>
+        <div class="box"><b>Action verb + what you built + tools used + result</b></div>
+        <h4>Weak vs strong</h4>
+        <ul>
+          <li><b>Weak:</b> Worked on a job search website.</li>
+          <li><b>Strong:</b> Built a job-search web app using HTML, CSS and JavaScript with filters and saved jobs, used by 40 classmates during placements.</li>
+        </ul>
+        <ul>
+          <li><b>Weak:</b> Responsible for data analysis.</li>
+          <li><b>Strong:</b> Analysed 10,000 sales records in Excel and Python, finding 3 low-performing products that led to a 15% cleaner report.</li>
+        </ul>
+        <h4>Tips</h4>
+        <ul>
+          <li>Start with verbs like <i>Built, Designed, Analysed, Led, Automated, Improved</i>.</li>
+          <li>Add a number wherever you honestly can: users, time saved, size of data, team size.</li>
+          <li>Keep each bullet to one or two lines, with 2 to 4 bullets per project.</li>
+          <li>Never invent numbers. You may be asked about them in the interview.</li>
+        </ul>`
+    },
+
+    "interview-questions": {
+      title: "Common interview questions",
+      tag: "Interviews", time: "8 min read",
+      body: `
+        <p>You don't need memorised answers, just a clear structure and real examples.</p>
+        <h4>1. Tell me about yourself</h4>
+        <p>Use <b>Present → Past → Future</b>: what you study or do now, the projects and experience that brought you here, and what role you want next. Keep it under 90 seconds.</p>
+        <h4>2. Why do you want this job / company?</h4>
+        <p>Mention one thing about the company's product or work, and connect it to a skill you have.</p>
+        <h4>3. What are your strengths?</h4>
+        <p>Pick two, and give a short example for each (for example, "I learn quickly. In my final-year project I picked up React in two weeks").</p>
+        <h4>4. What is your weakness?</h4>
+        <p>Choose a real but manageable one and say what you are doing about it. Avoid "I work too hard".</p>
+        <h4>5. Tell me about a challenge you faced</h4>
+        <p>Use the <b>STAR</b> method:</p>
+        <ul>
+          <li><b>Situation:</b> the context.</li>
+          <li><b>Task:</b> what you had to do.</li>
+          <li><b>Action:</b> what you did, in the first person.</li>
+          <li><b>Result:</b> what happened and what you learned.</li>
+        </ul>
+        <h4>6. Where do you see yourself in 3 years?</h4>
+        <p>Talk about skills you want to build and responsibility you want to take on, not just titles.</p>
+        <h4>7. Do you have any questions for us?</h4>
+        <p>Always say yes. Ask about the team, what the first 90 days look like, or how success is measured.</p>`
+    },
+
+    "video-checklist": {
+      title: "Video interview checklist",
+      tag: "Interviews", time: "3 min read",
+      body: `
+        <p>Run through this list <b>30 minutes before</b> the interview.</p>
+        <h4>Technology</h4>
+        <ul>
+          <li>Open the meeting link (Google Meet, Zoom or Teams) and test it once.</li>
+          <li>Charge your laptop and keep the charger plugged in.</li>
+          <li>Check internet speed. Keep a mobile hotspot ready as backup.</li>
+          <li>Test your microphone and camera. Use earphones to reduce echo.</li>
+          <li>Close other tabs and apps, and turn off notifications.</li>
+        </ul>
+        <h4>Setup</h4>
+        <ul>
+          <li>Face a window or lamp so light falls on your face, not behind you.</li>
+          <li>Place the camera at eye level, about an arm's length away.</li>
+          <li>Choose a plain, tidy background in a quiet room.</li>
+        </ul>
+        <h4>You</h4>
+        <ul>
+          <li>Dress as you would for an in-person interview, top to bottom.</li>
+          <li>Keep your resume, a pen, paper and water within reach.</li>
+          <li>Look at the camera when speaking and smile when you greet.</li>
+          <li>Join 5 minutes early.</li>
+        </ul>
+        <div class="box">If the connection drops, rejoin quickly and send a short message to the recruiter. It is normal and rarely held against you.</div>`
+    },
+
+    "skills-employers": {
+      title: "Skills employers look for",
+      tag: "Skills", time: "6 min read",
+      body: `
+        <p>For entry-level roles, employers hire for attitude and learning speed as much as technical knowledge.</p>
+        <h4>Core skills and how to show them</h4>
+        <ul>
+          <li><b>Communication:</b> write clear emails, explain projects simply. Show it with a well-written resume and a clear project README.</li>
+          <li><b>Problem solving:</b> break big problems into steps. Show it with a project where you fixed something hard, and explain how.</li>
+          <li><b>Teamwork:</b> Show it with group projects, clubs or hackathons, and what your role was.</li>
+          <li><b>Learning ability:</b> mention courses, certificates or a new tool you taught yourself.</li>
+          <li><b>Time management:</b> deadlines met, exams plus projects handled together.</li>
+          <li><b>Ownership:</b> a time you took initiative without being asked.</li>
+        </ul>
+        <h4>Role-specific basics</h4>
+        <ul>
+          <li><b>Tech:</b> one programming language well, Git, basic databases, data structures.</li>
+          <li><b>Design:</b> Figma, user research basics, a portfolio of 3 case studies.</li>
+          <li><b>Business / marketing:</b> Excel or Google Sheets, presentation skills, basic analytics.</li>
+        </ul>
+        <div class="box">Don't just list skills. Attach each one to a project, internship or achievement so it can be proven.</div>`
+    },
+
+    "build-portfolio": {
+      title: "Build a portfolio",
+      tag: "Skills", time: "6 min read",
+      cta: { text: "Add portfolio to profile →", href: "profile.html" },
+      body: `
+        <p>A portfolio proves your skills. It works for designers, developers, writers, marketers and analysts alike.</p>
+        <h4>Steps</h4>
+        <ol>
+          <li><b>Pick 3 projects</b> you are proud of. Quality beats quantity.</li>
+          <li><b>Write a short case study for each:</b> the problem, your role, the tools you used, the process, and the result.</li>
+          <li><b>Show visuals:</b> screenshots, a demo link, a GitHub repo or a short video.</li>
+          <li><b>Publish it:</b> use GitHub Pages, Notion, Behance or a simple personal site.</li>
+          <li><b>Add the link</b> to your resume, LinkedIn and CareerFlow profile.</li>
+        </ol>
+        <h4>Case study template</h4>
+        <div class="box">
+          <b>Problem:</b> what needed solving?<br>
+          <b>My role:</b> what did you personally do?<br>
+          <b>Process:</b> key steps and decisions.<br>
+          <b>Result:</b> what changed, what you learned.
+        </div>
+        <h4>Tips</h4>
+        <ul>
+          <li>Put your best project first.</li>
+          <li>Make sure every link works before applying.</li>
+          <li>Keep it updated after each new project.</li>
+        </ul>`
+    },
+
+    "offer-letter": {
+      title: "Understanding your offer letter",
+      tag: "Offers", time: "7 min read",
+      body: `
+        <p>Read the whole letter before you accept. Here are the terms you will see most.</p>
+        <h4>Key terms</h4>
+        <ul>
+          <li><b>CTC (Cost to Company):</b> the total the company spends on you per year. It is <i>not</i> what reaches your bank account.</li>
+          <li><b>Fixed pay:</b> guaranteed salary, made up of basic, HRA and allowances.</li>
+          <li><b>Variable pay:</b> depends on performance. It may not be paid in full.</li>
+          <li><b>In-hand salary:</b> what you receive monthly after PF, tax and other deductions.</li>
+          <li><b>PF (Provident Fund):</b> a retirement saving deducted from salary, usually with a matching employer contribution.</li>
+          <li><b>Joining bonus:</b> a one-time payment, often with a clause to repay if you leave early.</li>
+          <li><b>Notice period:</b> how long you must serve before resigning. For freshers this is often 1 to 3 months.</li>
+          <li><b>Probation:</b> an initial period, commonly 3 to 6 months, during which you are evaluated.</li>
+          <li><b>Service agreement / bond:</b> a minimum time you commit to stay. Check the penalty carefully.</li>
+        </ul>
+        <h4>Questions to ask HR</h4>
+        <ul>
+          <li>What is the monthly in-hand amount?</li>
+          <li>How much of the CTC is fixed and how much is variable?</li>
+          <li>Is there a bond or joining-bonus clawback?</li>
+          <li>What is the work location, and is remote or hybrid allowed?</li>
+        </ul>
+        <div class="box">Get every promise in writing, and don't resign from your current role until you have the signed offer.</div>`
+    },
+
+    "negotiate-salary": {
+      title: "Negotiating your first salary",
+      tag: "Offers", time: "6 min read",
+      body: `
+        <p>Negotiating is normal and professional. Even a small, polite request can be worth it.</p>
+        <h4>Before you talk</h4>
+        <ol>
+          <li><b>Research the range</b> for the role and city using job listings, Glassdoor, AmbitionBox and seniors in your network.</li>
+          <li><b>Know your number:</b> a comfortable target, and a minimum you'd accept.</li>
+          <li><b>List your value:</b> projects, internships, skills, other offers.</li>
+        </ol>
+        <h4>During the conversation</h4>
+        <ul>
+          <li>Start with thanks and enthusiasm for the role.</li>
+          <li>Ask, don't demand. For example: "Based on my research and skills, I was hoping for a package closer to ₹X. Is there flexibility?"</li>
+          <li>Give a reason, not just a number.</li>
+          <li>If the salary can't move, ask about a joining bonus, a review after 6 months, learning budget or remote days.</li>
+        </ul>
+        <h4>Avoid</h4>
+        <ul>
+          <li>Comparing yourself to friends' salaries.</li>
+          <li>Lying about other offers.</li>
+          <li>Accepting or rejecting on the spot. It is fine to say "Can I reply by tomorrow?"</li>
+        </ul>
+        <div class="box">For freshers, campus and entry-level bands are often fixed. If there's no room, focus on growth, learning and the review timeline.</div>`
+    },
+
+    "cover-letter": {
+      title: "Cover letter starter",
+      tag: "Resume", time: "4 min read",
+      body: `
+        <p>Keep it to <b>3 short paragraphs</b>, under 250 words. Replace the [brackets] for each application.</p>
+        <div class="box">
+          Dear [Hiring Manager's name],<br><br>
+          I am applying for the [Job title] role at [Company]. I recently completed my [degree] from [College] and I am excited about [something specific about the company or product].<br><br>
+          During my studies, I [project or internship], where I [what you did and the result]. This taught me [skill 1] and [skill 2], which match the requirements in your job description.<br><br>
+          I would love to discuss how I can contribute to [team/company goal]. My resume and portfolio are attached at [link]. Thank you for your time and consideration.<br><br>
+          Sincerely,<br>
+          [Your name]<br>
+          [Phone] · [Email]
+        </div>
+        <h4>Checklist</h4>
+        <ul>
+          <li>Use the hiring manager's name if you can find it.</li>
+          <li>Mention the company by name and one real detail about them.</li>
+          <li>Match 2 skills from the job description to your experience.</li>
+          <li>Proofread twice, and save as a PDF.</li>
+        </ul>`
+    }
+  };
+
+  // ---------- Popup logic ----------
+  var modal = document.getElementById("guide-modal");
+  var gTitle = document.getElementById("guide-title");
+  var gTag = document.getElementById("guide-tag");
+  var gMeta = document.getElementById("guide-meta");
+  var gBody = document.getElementById("guide-body");
+  var gCta = document.getElementById("guide-cta");
+  var lastFocus = null;
+
+  function openGuide(id) {
+    var g = guides[id];
+    if (!g) return;
+    lastFocus = document.activeElement;
+    gTitle.textContent = g.title;
+    gTag.textContent = g.tag;
+    gMeta.textContent = g.time;
+    gBody.innerHTML = g.body;
+    if (g.cta) {
+      gCta.textContent = g.cta.text;
+      gCta.href = g.cta.href;
+      gCta.classList.remove("hidden");
+    } else {
+      gCta.classList.add("hidden");
+    }
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+    modal.querySelector("button[data-close]").focus();
+  }
+
+  function closeGuide() {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+
+  var cards = document.querySelectorAll("#resource-grid article");
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      openGuide(card.getAttribute("data-guide"));
+    });
+    card.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openGuide(card.getAttribute("data-guide"));
+      }
+    });
+    // Links inside cards should navigate normally
+    card.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.stopPropagation(); });
+    });
   });
 
-  // Category filter chips
+  modal.querySelectorAll("[data-close]").forEach(function (el) {
+    el.addEventListener("click", closeGuide);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) closeGuide();
+  });
+
+  // ---------- Category filter chips ----------
   var chips = document.querySelectorAll(".chip");
-  var cards = document.querySelectorAll("#resource-grid article");
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
       var cat = chip.getAttribute("data-cat");
