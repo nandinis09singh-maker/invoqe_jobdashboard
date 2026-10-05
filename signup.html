@@ -48,8 +48,8 @@
     </ul>
   </div>
 
-  <!-- Form -->
-  <form class="card p-8" onsubmit="event.preventDefault(); window.location.href='profile.html';">
+  <!-- Form (submit is handled by js/auth.js) -->
+  <form class="card p-8" id="signupForm">
     <p class="text-xs font-semibold tracking-wide text-[#4338ea] mb-2">CREATE YOUR ACCOUNT</p>
     <h2 class="text-3xl font-extrabold mb-2">Tell us where you're headed.</h2>
     <p class="text-[#585d76] mb-6">A few details help us personalise roles for your degree and preferred Indian job markets.</p>
@@ -65,16 +65,20 @@
     <div class="space-y-4">
       <div>
         <label class="block text-sm font-medium mb-1" for="full-name">Full name</label>
-        <input id="full-name" type="text" required placeholder="Aarav Mehta" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
+        <input id="full-name" type="text" required data-name autocomplete="name" placeholder="Aarav Mehta" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
       </div>
       <div>
         <label class="block text-sm font-medium mb-1" for="email">Email address</label>
         <input id="email" type="email" required placeholder="aarav.mehta@gmail.com" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
       </div>
       <div>
+        <label class="block text-sm font-medium mb-1" for="phone">Mobile number</label>
+        <input id="phone" type="tel" required data-phone placeholder="9876543210" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
+      </div>
+      <div>
         <label class="block text-sm font-medium mb-1" for="password">Password</label>
         <div class="relative">
-          <input id="password" type="password" required placeholder="••••••••••••" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
+          <input id="password" type="password" required minlength="8" placeholder="At least 8 characters" class="w-full border border-[#e7e9f0] rounded-lg px-4 py-2.5 text-sm outline-none focus:border-[#4338ea]" />
           <button type="button" data-toggle-password="#password" class="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-medium text-[#585d76]">Show</button>
         </div>
       </div>
@@ -115,6 +119,8 @@
 <div id="wordmark" style="height:220px" aria-hidden="true"></div>
 
 <script src="js/main.js"></script>
+<script src="js/motion.js"></script>
+    <script src="js/auth.js"></script>
 <script src="js/vector-wordmark.js"></script>
 <script>
   VectorWordmark(document.getElementById("wordmark"), {
