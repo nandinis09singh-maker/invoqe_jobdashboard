@@ -7,7 +7,7 @@
   <title>Saved Jobs · CareerFlow</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -16,25 +16,24 @@
       padding: 0;
     }
 
+    /* FAILSAFE: scripts can never hide the page */
+    html, body {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
     body {
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Arial, sans-serif;
       background: #f7f8fc;
       color: #0b0f1a;
       min-height: 100vh;
-      display: flex;
+      display: flex !important;
       flex-direction: column;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
 
     /* HEADER */
     header {
@@ -98,14 +97,9 @@
       font-weight: 500;
     }
 
-    .nav a:hover {
-      color: #4338ea;
-    }
+    .nav a:hover { color: #4338ea; }
 
-    .nav a.active {
-      color: #111827;
-      font-weight: 600;
-    }
+    .nav a.active { color: #111827; font-weight: 600; }
 
     .nav a.active::after {
       content: "";
@@ -119,17 +113,8 @@
     }
 
     /* AUTH LINKS + PROFILE */
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .auth-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .header-right { display: flex; align-items: center; gap: 14px; }
+    .auth-links { display: flex; align-items: center; gap: 10px; }
 
     .auth-signin {
       font-size: 15px;
@@ -139,9 +124,7 @@
       border-radius: 8px;
     }
 
-    .auth-signin:hover {
-      color: #4338ea;
-    }
+    .auth-signin:hover { color: #4338ea; }
 
     .auth-signup {
       font-size: 15px;
@@ -153,14 +136,9 @@
       transition: background 0.2s ease;
     }
 
-    .auth-signup:hover {
-      background: #3929c9;
-    }
+    .auth-signup:hover { background: #3929c9; }
 
-    .profile {
-      display: flex;
-      align-items: center;
-    }
+    .profile { display: flex; align-items: center; }
 
     .profile-circle {
       width: 44px;
@@ -184,9 +162,7 @@
       flex: 1;
     }
 
-    .page-header {
-      margin-bottom: 38px;
-    }
+    .page-header { margin-bottom: 38px; }
 
     .page-header h1 {
       font-size: 38px;
@@ -202,11 +178,7 @@
       line-height: 1.5;
     }
 
-    .jobs-list {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
+    .jobs-list { display: flex; flex-direction: column; gap: 18px; }
 
     /* JOB CARD */
     .job-card {
@@ -228,11 +200,7 @@
       box-shadow: 0 10px 25px rgba(20, 25, 45, 0.07);
     }
 
-    .job-info {
-      display: flex;
-      align-items: flex-start;
-      gap: 24px;
-    }
+    .job-info { display: flex; align-items: flex-start; gap: 24px; }
 
     .company-logo {
       width: 56px;
@@ -251,9 +219,7 @@
     .metro { background: #c65b00; }
     .cred { background: #4338ea; }
 
-    .job-details {
-      padding-top: 2px;
-    }
+    .job-details { padding-top: 2px; }
 
     .job-title {
       font-size: 20px;
@@ -268,9 +234,7 @@
       margin-bottom: 11px;
     }
 
-    .separator {
-      margin: 0 4px;
-    }
+    .separator { margin: 0 4px; }
 
     .closing-badge {
       display: inline-flex;
@@ -284,11 +248,9 @@
       font-weight: 600;
     }
 
-    .clock {
-      font-size: 12px;
-    }
+    .clock { font-size: 12px; }
 
-    /* APPLY BUTTON (now a link) */
+    /* APPLY BUTTON */
     .apply-button {
       min-width: 188px;
       height: 43px;
@@ -311,16 +273,10 @@
       transform: translateY(-1px);
     }
 
-    .apply-button:active {
-      transform: translateY(0);
-    }
+    .apply-button:active { transform: translateY(0); }
 
     /* WORDMARK BANNER */
-    #wordmark {
-      width: 100%;
-      height: 220px;
-      flex-shrink: 0;
-    }
+    #wordmark { width: 100%; height: 220px; flex-shrink: 0; }
 
     /* FOOTER */
     footer {
@@ -342,12 +298,7 @@
       justify-content: space-between;
     }
 
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-weight: 700;
-    }
+    .footer-logo { display: flex; align-items: center; gap: 9px; font-weight: 700; }
 
     .footer-icon {
       width: 32px;
@@ -359,10 +310,7 @@
       justify-content: center;
     }
 
-    .footer-text {
-      color: #9da3b5;
-      font-size: 13px;
-    }
+    .footer-text { color: #9da3b5; font-size: 13px; }
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
@@ -380,12 +328,7 @@
       .page-header h1 { font-size: 32px; }
       .page-header p { font-size: 16px; }
 
-      .job-card {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 22px;
-      }
-
+      .job-card { flex-direction: column; align-items: stretch; gap: 22px; }
       .job-info { gap: 15px; }
       .apply-button { width: 100%; }
       #wordmark { height: 160px; }
@@ -399,13 +342,7 @@
       .auth-signin { display: none; }
       .auth-signup { padding: 8px 12px; font-size: 14px; }
       .page-header h1 { font-size: 29px; }
-
-      .company-logo {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-      }
-
+      .company-logo { width: 48px; height: 48px; border-radius: 12px; }
       .job-title { font-size: 18px; }
       .company-details { font-size: 14px; }
     }
@@ -522,20 +459,49 @@
     </div>
   </footer>
 
-  <script src="js/vector-wordmark.js"></script>
+  <!-- SCRIPTS: each loads independently; a failure in one cannot blank the page -->
   <script>
-    if (window.VectorWordmark) {
-      VectorWordmark(document.getElementById("wordmark"), {
-        text: "CAREERFLOW",
-        fontSize: 120,
-        labels: false
+    // Load a script safely. A 404 or runtime error is logged, never fatal.
+    function loadScript(src, done) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.onload = function () { if (done) done(); };
+      s.onerror = function () {
+        console.warn("Could not load " + src);
+        if (done) done();
+      };
+      document.body.appendChild(s);
+    }
+
+    // Safety net: if any script hides the page, force it visible again.
+    function forceVisible() {
+      [document.documentElement, document.body].forEach(function (el) {
+        el.style.setProperty("opacity", "1", "important");
+        el.style.setProperty("visibility", "visible", "important");
       });
     }
-  </script>
 
-  <script src="js/auth.js"></script>
-  <script src="js/motion.js"></script>
+    window.addEventListener("error", forceVisible);
+    window.addEventListener("load", function () {
+      forceVisible();
+      setTimeout(forceVisible, 1500);
+    });
+
+    loadScript("js/vector-wordmark.js", function () {
+      try {
+        if (window.VectorWordmark) {
+          VectorWordmark(document.getElementById("wordmark"), {
+            text: "CAREERFLOW",
+            fontSize: 120,
+            labels: false
+          });
+        }
+      } catch (e) { console.warn("Wordmark failed:", e); }
+
+      loadScript("js/auth.js", function () {
+        loadScript("js/motion.js", forceVisible);
+      });
+    });
+  </script>
 </body>
 </html>
-
-  
